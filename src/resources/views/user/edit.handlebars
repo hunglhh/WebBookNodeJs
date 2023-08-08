@@ -1,0 +1,17 @@
+    {{>headerAd}}
+    <div class="form-style-5">
+        <form method="post" action="/myuser/user/{{user._id}}?_method=PUT">
+        <h1>Thay đổi thông tin tài khoản</h1>
+        <fieldset>
+        <legend><span class="number">1</span>Tên Tài Khoản</legend>
+        <input type="text" name="fullname" value="{{user.fullname}}">
+        <legend><span class="number">2</span>Email</legend>
+        <input type="text" name="email" value="{{user.email}}">
+        <legend><span class="number">3</span>Password</legend>
+        <input type="text" name="password" value="{{user.password}}">
+        </fieldset>
+        
+     
+        <button type="submit">Update</button> 
+        </form>
+        </div>

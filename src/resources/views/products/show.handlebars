@@ -1,0 +1,88 @@
+ {{>header}}
+ <section class="details" id="details">
+
+    <div class="rowdetail">
+        <div class="books-detail">
+            <div class="swiper-wrapper">
+                {{!-- <a href="" class="swiper-slide"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{product.videoId}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></a> --}}
+                <img style="width: 120%;" class="swiper-slide" src="{{product.image}}" alt="">
+            </div>
+        </div>
+        <div class="contentdetail">
+            <h3>{{product.name}}</h3>
+            <p>{{product.description}}</p>
+           
+            <a href="" class="btn">shop now</a>
+        </div>
+       
+    </div>
+
+</section>
+<section class="comment">
+  <h1 style="margin-bottom: 20px;">Comment App</h1>
+  <div class="comment">
+   {{#each comments}}
+        <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553__340.png" alt="" class="avatar">
+        <div class="content">
+           
+          <div class="author">{{this.author}}</div>
+          <div class="text">{{this.text}}</div>
+          <div class="star-rating">
+            {{!-- {{#times 5}}
+              {{#if (gte ../this.rating @index)}}
+                <i class="fa fa-star"></i>
+              {{else}}
+                <i class="far fa-star"></i>
+              {{/if}}
+            {{/times}} --}}
+            {{!-- {{#range 1 (Number this.rating)}}
+              <i class="{{#if (lte this @index)}}fas {{else}}fas{{/if}} fa-star star-yellow"></i>
+            {{/range}} --}}
+            {{#each (stars rating)}}
+              <span class="{{this}}"></span>
+            {{/each}}
+          </div>
+          <div class="time">{{this.createdAt}}</div>
+          <div class="replies">
+            <a href="#" class="reply">Reply</a>
+          </div>
+        </div>
+      </div>
+       {{/each}}
+      <form class="comment-form" action="/commentsubmit" method="post">
+      <input type="hidden" name="slug" value="{{product.slug}}"><br>
+        <textarea class="textarea" name="text" placeholder="Add a comment"></textarea> 
+        <div class="rating">
+      <label for="comment-Rating">Your Rating<span>*</span></label>
+                                    
+          <span class="rating-block">
+            <br>
+            <input type="radio" name="star" id="star1" value="5">
+            <label for="star1" class="fa fa-star"></label>
+            <input type="radio" name="star" id="star2" value="4">
+            <label for="star2" class="fa fa-star"></label>
+            <input type="radio" name="star" id="star3" value="3">
+            <label for="star3" class="fa fa-star"></label>
+            <input type="radio" name="star" id="star4" value="2">
+            <label for="star4" class="fa fa-star"></label>
+            <input type="radio" name="star" id="star5" value="1">
+            <label for="star5" class="fa fa-star"></label>
+          </span>
+        </div>
+        <br>
+        <div id="result"></div>
+        {{!-- <label>Rating:</label>
+          <select name="rating">
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+          </select><br> --}}
+        <button type="submit" class="submit-button">Comment</button>
+      </form>
+    
+
+</section>    
+<!--home section stars-->
+{{>footer}}

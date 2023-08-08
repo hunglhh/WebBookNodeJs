@@ -1,0 +1,23 @@
+{{>header}}
+<div class="login-form-container active">
+    <a id="close-login-btn" class="fas fa-times" href="/"></a>
+    <form method="post" action="/login/postRegister">
+        <h3>Register</h3>
+        <span>email</span>
+        <input type="email" name="email" class="box" placeholder="Enter your email" id="" required>
+         <span>fullname</span>
+        <input type="text" name="fullname" class="box" placeholder="Enter your fullname" id="" required>
+        <span>password</span>
+        <input type="password" name="password" class="box" placeholder="Enter your password" id="" required>
+         <span>Confirm password</span>
+        <input type="password" name="confirmPassword" class="box" placeholder="Confirm your password" id="" required>
+        <div class="checkbox">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me">Remember me</label>
+        </div>
+        <input type="submit" value="register" class="btn">
+        <p>forget password ? <a href="">click here</a></p>
+        <p>Don't have account ? <a href="">Create one</a></p>
+    </form>
+</div>
+{{>footer}}

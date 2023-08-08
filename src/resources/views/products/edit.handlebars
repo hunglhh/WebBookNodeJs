@@ -1,0 +1,21 @@
+    {{>headerAd}}
+    <div class="form-style-5">
+        <form method="post" action="/{{product._id}}?_method=PUT">
+        <h1>Thay đổi thông tin sách</h1>
+        <fieldset>
+        <legend><span class="number">1</span>Tên Sách</legend>
+        <input type="text" name="name" value="{{product.name}}">
+        <legend><span class="number">2</span>Tác Giả</legend>
+        <input type="text" name="author" value="{{product.author}}">
+        <legend><span class="number">3</span>Mô tả</legend>
+        <textarea name="description" value="">{{product.description}}</textarea>
+        {{!-- <legend><span class="number">4</span>Video Id</legend>
+        <input type="text" name="videoId" value="{{product.videoId}}"> --}}
+        <legend><span class="number">4</span>Image</legend>
+        <input type="text" name="image" value="{{product.image}}">
+        </fieldset>
+        
+     
+        <button type="submit">Thêm sách</button> 
+        </form>
+        </div>

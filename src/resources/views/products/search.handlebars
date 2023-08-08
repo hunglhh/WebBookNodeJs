@@ -1,0 +1,38 @@
+ {{>header}}
+
+<!--featured section starts-->
+
+<section class="featured" id="featured">
+    <h1 class="heading"><span>searched books</span></h1>
+
+    <div class="swiper featured-slider">
+        <div class="swiper-wrapper">
+            {{#each products}}
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="" class="fas fa-search"></a>
+                    <a href="" class="fas fa-heart"></a>
+                    <a href="" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <a href="/{{this.slug}}">
+                    <img src="{{this.image}}" alt="">
+                    </a>
+                </div>
+                <div class="content">
+                    <h3>{{this.name}}</h3>
+                    <div class="price">{{this.author}}</div>
+                    <a href="" class="btn">Watch Now</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<!--featured section end-->
+
+ {{>footer}}
